@@ -23,26 +23,67 @@ const Index = () => {
   };
 
   const determineRunnerType = () => {
-    // Simplified logic - can be made more sophisticated
-    const answerPatterns = answers.reduce((acc, curr) => {
-      acc[curr] = (acc[curr] || 0) + 1;
-      return acc;
-    }, {} as Record<string, number>);
+    // Count the frequency of keywords in answers
+    const traits = {
+      competitive: 0,
+      lifestyle: 0,
+      adventurous: 0,
+      social: 0
+    };
 
-    const maxAnswers = Math.max(...Object.values(answerPatterns));
-    const mostCommonAnswer = Object.keys(answerPatterns).find(
-      key => answerPatterns[key] === maxAnswers
-    );
+    answers.forEach(answer => {
+      // Competitive traits
+      if (answer.toLowerCase().includes("competição") || 
+          answer.toLowerCase().includes("recordes") ||
+          answer.toLowerCase().includes("superação") ||
+          answer.toLowerCase().includes("determinação")) {
+        traits.competitive++;
+      }
+      
+      // Lifestyle traits
+      if (answer.toLowerCase().includes("saúde") ||
+          answer.toLowerCase().includes("bem-estar") ||
+          answer.toLowerCase().includes("equilíbrio") ||
+          answer.toLowerCase().includes("rotina")) {
+        traits.lifestyle++;
+      }
+      
+      // Adventurous traits
+      if (answer.toLowerCase().includes("trilhas") ||
+          answer.toLowerCase().includes("aventura") ||
+          answer.toLowerCase().includes("natureza") ||
+          answer.toLowerCase().includes("explorar")) {
+        traits.adventurous++;
+      }
+      
+      // Social traits
+      if (answer.toLowerCase().includes("grupo") ||
+          answer.toLowerCase().includes("amigos") ||
+          answer.toLowerCase().includes("socialização") ||
+          answer.toLowerCase().includes("comunidade")) {
+        traits.social++;
+      }
+    });
 
-    if (mostCommonAnswer?.includes("competição") || mostCommonAnswer?.includes("recordes")) {
-      return ["Corredor Competitivo", runnerTypes["Corredor Competitivo"]];
-    } else if (mostCommonAnswer?.includes("saúde") || mostCommonAnswer?.includes("bem-estar")) {
-      return ["Corredor Lifestyle", runnerTypes["Corredor Lifestyle"]];
-    } else if (mostCommonAnswer?.includes("trilhas") || mostCommonAnswer?.includes("aventura")) {
-      return ["Corredor Aventureiro", runnerTypes["Corredor Aventureiro"]];
-    } else {
-      return ["Corredor Social", runnerTypes["Corredor Social"]];
-    }
+    console.log("Trait scores:", traits);
+
+    // Find the dominant trait
+    const dominantTrait = Object.entries(traits).reduce((a, b) => 
+      a[1] > b[1] ? a : b
+    )[0];
+
+    // Map trait to runner type
+    const typeMap = {
+      competitive: "Corredor Competitivo",
+      lifestyle: "Corredor Lifestyle",
+      adventurous: "Corredor Aventureiro",
+      social: "Corredor Social"
+    };
+
+    const runnerType = typeMap[dominantTrait as keyof typeof typeMap];
+    console.log("Determined runner type:", runnerType);
+
+    return [runnerType, runnerTypes[runnerType as keyof typeof runnerTypes]] as const;
   };
 
   return (
