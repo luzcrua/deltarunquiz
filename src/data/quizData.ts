@@ -92,8 +92,13 @@ export const questions = [
 ];
 
 export const runnerTypes = {
-  "Corredor Competitivo": "Você é focado em resultados e sempre busca superar seus limites. Sua dedicação aos treinos e determinação em alcançar objetivos fazem de você um corredor nato para competições.",
-  "Corredor Lifestyle": "Para você, correr é mais que um exercício - é um estilo de vida. Você valoriza o equilíbrio entre saúde, bem-estar e socialização, tornando cada corrida uma experiência completa.",
-  "Corredor Aventureiro": "Você ama explorar novos caminhos e desafios. As trilhas e terrenos variados são seu playground, e cada corrida é uma nova aventura a ser descoberta.",
-  "Corredor Social": "Você encontra sua motivação na energia do grupo. As corridas são sua forma de conectar com pessoas, compartilhar experiências e fazer parte de uma comunidade."
+  "Corredor Elite": "Você é um atleta nato, focado em performance e resultados. Sua dedicação aos treinos, disciplina rigorosa e busca constante por superação fazem de você um corredor de elite. Você se destaca pela capacidade de manter ritmos intensos e pela mentalidade competitiva.",
+  
+  "Corredor Lifestyle": "Para você, correr é mais que um exercício - é um estilo de vida que equilibra saúde, bem-estar e realização pessoal. Você valoriza a consistência dos treinos e os benefícios holísticos da corrida, mantendo um equilíbrio saudável entre desafios e prazer.",
+  
+  "Corredor Aventureiro": "Você é movido pela adrenalina e descoberta. As trilhas e terrenos desafiadores são seu playground natural. Sua paixão por explorar novos caminhos e superar obstáculos naturais faz de você um verdadeiro aventureiro das corridas outdoor.",
+  
+  "Corredor Social": "O aspecto comunitário da corrida é sua maior motivação. Você prospera na energia do grupo, encontrando inspiração e motivação ao correr com outros. Sua capacidade de conectar pessoas e criar vínculos através da corrida é sua marca registrada.",
+  
+  "Corredor Técnico": "Você é metódico e analítico em sua abordagem à corrida. Sua atenção aos detalhes técnicos, como biomecânica, periodização de treinos e métricas de performance, combinada com um planejamento cuidadoso, define seu estilo único de corrida."
 };

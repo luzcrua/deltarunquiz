@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import QuizCard from "@/components/QuizCard";
 import ResultCard from "@/components/ResultCard";
+import { Progress } from "@/components/ui/progress";
 import { questions, runnerTypes } from "@/data/quizData";
 import useSound from "use-sound";
 
@@ -11,9 +12,12 @@ const Index = () => {
   const [playClick] = useSound("/click.mp3");
   const [playSuccess] = useSound("/success.mp3");
 
+  const progress = (currentQuestion / questions.length) * 100;
+
   const handleAnswer = (answer: string) => {
     playClick();
-    setAnswers([...answers, answer]);
+    const newAnswers = [...answers, answer];
+    setAnswers(newAnswers);
     
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
@@ -23,61 +27,63 @@ const Index = () => {
   };
 
   const determineRunnerType = () => {
-    // Count the frequency of keywords in answers
     const traits = {
-      competitive: 0,
+      elite: 0,
       lifestyle: 0,
       adventurous: 0,
-      social: 0
+      social: 0,
+      technical: 0
     };
 
     answers.forEach(answer => {
-      // Competitive traits
+      // Elite traits
       if (answer.toLowerCase().includes("competição") || 
           answer.toLowerCase().includes("recordes") ||
-          answer.toLowerCase().includes("superação") ||
-          answer.toLowerCase().includes("determinação")) {
-        traits.competitive++;
+          answer.toLowerCase().includes("intenso")) {
+        traits.elite++;
       }
       
       // Lifestyle traits
       if (answer.toLowerCase().includes("saúde") ||
           answer.toLowerCase().includes("bem-estar") ||
-          answer.toLowerCase().includes("equilíbrio") ||
-          answer.toLowerCase().includes("rotina")) {
+          answer.toLowerCase().includes("equilíbrio")) {
         traits.lifestyle++;
       }
       
       // Adventurous traits
       if (answer.toLowerCase().includes("trilhas") ||
           answer.toLowerCase().includes("aventura") ||
-          answer.toLowerCase().includes("natureza") ||
-          answer.toLowerCase().includes("explorar")) {
+          answer.toLowerCase().includes("natureza")) {
         traits.adventurous++;
       }
       
       // Social traits
       if (answer.toLowerCase().includes("grupo") ||
           answer.toLowerCase().includes("amigos") ||
-          answer.toLowerCase().includes("socialização") ||
-          answer.toLowerCase().includes("comunidade")) {
+          answer.toLowerCase().includes("socialização")) {
         traits.social++;
+      }
+      
+      // Technical traits
+      if (answer.toLowerCase().includes("técnica") ||
+          answer.toLowerCase().includes("planilha") ||
+          answer.toLowerCase().includes("análise")) {
+        traits.technical++;
       }
     });
 
     console.log("Trait scores:", traits);
 
-    // Find the dominant trait
     const dominantTrait = Object.entries(traits).reduce((a, b) => 
       a[1] > b[1] ? a : b
     )[0];
 
-    // Map trait to runner type
     const typeMap = {
-      competitive: "Corredor Competitivo",
+      elite: "Corredor Elite",
       lifestyle: "Corredor Lifestyle",
       adventurous: "Corredor Aventureiro",
-      social: "Corredor Social"
+      social: "Corredor Social",
+      technical: "Corredor Técnico"
     };
 
     const runnerType = typeMap[dominantTrait as keyof typeof typeMap];
@@ -87,43 +93,56 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-background via-background/95 to-background">
-      <motion.h1 
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-5xl font-bold mb-12 gradient-text text-center"
-      >
-        Qual tipo de corredor(a) é você?
-      </motion.h1>
-
-      <AnimatePresence mode="wait">
-        {currentQuestion < questions.length ? (
-          <QuizCard
-            key={currentQuestion}
-            question={questions[currentQuestion].question}
-            options={questions[currentQuestion].options}
-            onSelect={handleAnswer}
-            className="animate-float"
-          />
-        ) : (
-          <ResultCard
-            key="result"
-            type={determineRunnerType()[0]}
-            description={determineRunnerType()[1]}
-            className="animate-float"
-          />
-        )}
-      </AnimatePresence>
-
-      {currentQuestion < questions.length && (
-        <motion.p 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="mt-8 text-white/60"
+    <div 
+      className="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden"
+      style={{
+        backgroundImage: "url('/lovable-uploads/8ae9b043-9513-49cc-b9b7-e58662001972.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }}
+    >
+      {/* Overlay for better contrast */}
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+      
+      <div className="relative z-10 w-full max-w-4xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-12"
         >
-          Pergunta {currentQuestion + 1} de {questions.length}
-        </motion.p>
-      )}
+          <h1 className="font-serif text-5xl font-bold mb-6 gradient-text tracking-tight">
+            LINHA RUN
+            <span className="block text-3xl mt-2">(PRÉ-LANÇAMENTO)</span>
+          </h1>
+          
+          <div className="w-full max-w-md mx-auto">
+            <Progress value={progress} className="h-2 mb-2" />
+            <p className="text-sm text-white/60">
+              Progresso: {Math.round(progress)}%
+            </p>
+          </div>
+        </motion.div>
+
+        <AnimatePresence mode="wait">
+          {currentQuestion < questions.length ? (
+            <QuizCard
+              key={currentQuestion}
+              question={questions[currentQuestion].question}
+              options={questions[currentQuestion].options}
+              onSelect={handleAnswer}
+              className="animate-float"
+            />
+          ) : (
+            <ResultCard
+              key="result"
+              type={determineRunnerType()[0]}
+              description={determineRunnerType()[1]}
+              className="animate-float"
+            />
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 };
