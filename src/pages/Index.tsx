@@ -116,6 +116,12 @@ const Index = () => {
             <span className="block text-3xl mt-2">(PRÉ-LANÇAMENTO)</span>
           </h1>
           
+          <div className="glass-card p-6 mb-8 mx-auto max-w-2xl">
+            <h2 className="text-3xl font-bold gradient-text animate-glow">
+              QUAL TIPO DE CORREDOR(A) VOCÊ É?
+            </h2>
+          </div>
+
           <div className="w-full max-w-md mx-auto">
             <Progress value={progress} className="h-2 mb-2" />
             <p className="text-sm text-white/60">

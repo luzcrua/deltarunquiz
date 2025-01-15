@@ -88,6 +88,24 @@ export const questions = [
       "Intensifico os treinos",
       "Busco dicas com outros corredores"
     ]
+  },
+  {
+    question: "Como você escolhe seus equipamentos de corrida?",
+    options: [
+      "Pesquiso extensivamente e escolho os mais tecnológicos",
+      "Priorizo conforto e durabilidade",
+      "Sigo recomendações de outros corredores",
+      "Escolho os mais adequados para cada tipo de terreno"
+    ]
+  },
+  {
+    question: "Qual sua relação com metas e objetivos na corrida?",
+    options: [
+      "Estabeleço metas específicas e mensuráveis",
+      "Corro pelo prazer, sem pressão",
+      "Foco em superar limites gradualmente",
+      "Adapto as metas conforme meu progresso"
+    ]
   }
 ];
 
