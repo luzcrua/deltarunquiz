@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { QuestionMark } from "lucide-react";
+import { HelpCircle } from "lucide-react";
 
 interface QuizCardProps {
   question: string;
@@ -27,7 +27,7 @@ const QuizCard = ({ question, options, onSelect, className }: QuizCardProps) => 
         transition={{ delay: 0.2 }}
         className="flex items-start gap-3 mb-6"
       >
-        <QuestionMark className="w-6 h-6 sm:w-8 sm:h-8 text-neon-blue flex-shrink-0 mt-1" />
+        <HelpCircle className="w-6 h-6 sm:w-8 sm:h-8 text-neon-blue flex-shrink-0 mt-1" />
         <h2 className="text-lg sm:text-xl md:text-2xl font-bold gradient-text text-left">
           {question}
         </h2>
