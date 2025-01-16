@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
-import { Camera, Send, Share2, Award, Instagram } from "lucide-react";
+import { Camera, Send, Share2, Award, Megaphone } from "lucide-react";
 import { toast } from "sonner";
 
 interface ResultCardProps {
@@ -66,14 +66,24 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
             </p>
           </motion.div>
 
-          {/* Instagram Share Instructions */}
+          {/* Instructions Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.6 }}
             className="mb-8"
           >
+            {/* Pre-launch Title */}
+            <div className="flex items-center gap-3 mb-6">
+              <Megaphone className="w-6 h-6 text-neon-purple animate-pulse" />
+              <h3 className="text-xl sm:text-2xl font-bold gradient-text">
+                QUER CONHECER O PRÉ-LANÇAMENTO DA LINHA RUN?
+              </h3>
+            </div>
+
+            {/* Instructions Card */}
             <div className="glass-card p-4 sm:p-6 rounded-lg space-y-4">
+              {/* Screenshot Instruction */}
               <motion.div 
                 className="flex items-center gap-3"
                 whileHover={{ x: 5 }}
@@ -85,17 +95,7 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
                 </p>
               </motion.div>
 
-              <motion.div 
-                className="flex items-center gap-3"
-                whileHover={{ x: 5 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Instagram className="w-5 h-5 text-pink-500" />
-                <p className="text-white/90">
-                  Poste nos stories marcando @deltafitnessbrazil
-                </p>
-              </motion.div>
-
+              {/* Share Instruction */}
               <motion.div 
                 className="flex items-center gap-3"
                 whileHover={{ x: 5 }}
@@ -118,6 +118,7 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
                 </Button>
               </motion.div>
 
+              {/* Send Print Instruction */}
               <motion.div 
                 className="flex items-center gap-3"
                 whileHover={{ x: 5 }}
@@ -129,6 +130,7 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
                 </p>
               </motion.div>
 
+              {/* Discount Info */}
               <motion.div 
                 className="flex items-center gap-3"
                 whileHover={{ x: 5 }}
