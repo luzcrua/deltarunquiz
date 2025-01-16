@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
-import { Camera, Send, Megaphone, Award } from "lucide-react";
+import { Camera, Send, Share2, Award, Megaphone } from "lucide-react";
+import { toast } from "sonner";
 
 interface ResultCardProps {
   type: string;
@@ -11,6 +12,21 @@ interface ResultCardProps {
 }
 
 const ResultCard = ({ type, description, className }: ResultCardProps) => {
+  const handleWhatsAppShare = () => {
+    const shareMessage = encodeURIComponent(
+      "🏃‍♂️ Ei! Vamos descobrir nosso perfil de corredor juntos? Faz o quiz comigo:\n\n"
+    );
+    const shareUrl = encodeURIComponent(window.location.href);
+    window.open(`https://wa.me/?text=${shareMessage}${shareUrl}`, '_blank');
+    
+    // Return to the quiz page
+    setTimeout(() => {
+      window.focus();
+    }, 500);
+
+    toast.success("Link compartilhado! Convide mais amigos para descobrirem seus perfis juntos! 🎉");
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -79,7 +95,30 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
                 </p>
               </motion.div>
 
-              {/* Send Instruction */}
+              {/* Share Instruction */}
+              <motion.div 
+                className="flex items-center gap-3"
+                whileHover={{ x: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Share2 className="w-5 h-5 text-neon-blue" />
+                <p className="text-white/90">
+                  Compartilhe este quiz com 3 amigos(a) de corrida
+                </p>
+              </motion.div>
+
+              {/* WhatsApp Share Button */}
+              <motion.div className="pl-8">
+                <Button
+                  onClick={handleWhatsAppShare}
+                  className="glass-card group hover:scale-105 transition-all duration-300 bg-[#25D366] hover:bg-[#128C7E] text-white font-medium px-6 py-3 rounded-full flex items-center gap-2 w-full sm:w-auto"
+                >
+                  <Share2 className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                  <span>Compartilhar no WhatsApp</span>
+                </Button>
+              </motion.div>
+
+              {/* Send Print Instruction */}
               <motion.div 
                 className="flex items-center gap-3"
                 whileHover={{ x: 5 }}
@@ -87,7 +126,7 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
               >
                 <Send className="w-5 h-5 text-neon-blue" />
                 <p className="text-white/90">
-                  Clique no botão logo abaixo e envie seu print
+                  Manda o print do seu perfil de corredor
                 </p>
               </motion.div>
 

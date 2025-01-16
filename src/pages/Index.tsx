@@ -130,22 +130,6 @@ const Index = () => {
           className="text-center"
         >
           <QuizHeader />
-          
-          {/* WhatsApp Share Button */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="mb-8"
-          >
-            <Button
-              onClick={handleWhatsAppShare}
-              className="glass-card group hover:scale-105 transition-all duration-300 bg-[#25D366] hover:bg-[#128C7E] text-white font-medium px-6 py-3 rounded-full flex items-center gap-2 mx-auto animate-float"
-            >
-              <Share2 className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
-              <span>Chamar amigos para fazer o quiz juntos!</span>
-            </Button>
-          </motion.div>
-
           <QuizTitle />
           {!showResult && <QuizProgress progress={progress} />}
         </motion.div>
