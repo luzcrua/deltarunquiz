@@ -8,9 +8,10 @@ export const ShareInstructions = () => {
     const shareMessage = encodeURIComponent(
       "🏃‍♂️ Ei! Vamos descobrir nosso perfil de corredor juntos? Faz o quiz comigo:\n\n"
     );
-    const shareUrl = encodeURIComponent(window.location.href);
+    const shareUrl = encodeURIComponent("https://bit.ly/deltafitness-linharun-quiz");
     window.open(`https://wa.me/?text=${shareMessage}${shareUrl}`, '_blank');
     
+    // Return to the quiz page
     setTimeout(() => {
       window.focus();
     }, 500);
