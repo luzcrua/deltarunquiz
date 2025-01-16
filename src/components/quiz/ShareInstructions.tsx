@@ -35,20 +35,7 @@ export const ShareInstructions = () => {
       >
         <Camera className="w-5 h-5 text-neon-blue" />
         <p className="text-white/90">
-          Tire o print do seu resultado PERFIL DE CORREDOR
-        </p>
-      </motion.div>
-
-      <motion.div 
-        variants={instructionVariants}
-        initial="initial"
-        animate="animate"
-        whileHover="hover"
-        className="flex items-center gap-3"
-      >
-        <Share2 className="w-5 h-5 text-neon-blue" />
-        <p className="text-white/90">
-          Pegue o print e poste nos stories marcando @deltafitnessbrazil
+          Tire o print do seu resultado PERFIL DE CORREDOR e poste nos stories marcando @deltafitnessbrazil
         </p>
       </motion.div>
 
@@ -84,7 +71,7 @@ export const ShareInstructions = () => {
       >
         <Send className="w-5 h-5 text-neon-blue" />
         <p className="text-white/90">
-          Mande os prints pra gente mostrando que fez as tarefas clicando no botão abaixo
+          Mande os prints pra gente e ganhe 10% de desconto para o pré-lançamento
         </p>
       </motion.div>
 
@@ -97,7 +84,7 @@ export const ShareInstructions = () => {
       >
         <Award className="w-5 h-5 text-neon-purple" />
         <p className="text-white/90">
-          Ganhe <span className="font-bold text-neon-purple">10% de desconto</span> antes de todo mundo para o pré-lançamento mais um ebook gratuito
+          Ganhe um Ebook Gratuito de "Plano de Treino de Corrida para Melhorar o Desempenho [em 4 Semanas]"
         </p>
       </motion.div>
     </div>
