@@ -32,7 +32,7 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.3 }}
-            className="text-3xl sm:text-5xl font-bold mb-6 sm:mb-8 gradient-text animate-glow tracking-tight"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 gradient-text animate-glow tracking-tight"
           >
             {type}
           </motion.h2>
@@ -44,7 +44,7 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
             transition={{ duration: 0.4, delay: 0.5 }}
             className="glass-card p-4 sm:p-6 rounded-lg mb-6 sm:mb-8 backdrop-blur-lg"
           >
-            <p className="text-base sm:text-xl leading-relaxed text-white/90">
+            <p className="text-sm sm:text-base md:text-lg leading-relaxed text-white/90">
               {description}
             </p>
           </motion.div>
@@ -54,20 +54,20 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.7 }}
-            className="flex justify-center mt-6 sm:mt-8"
+            className="flex justify-center mt-4 sm:mt-6"
           >
-            <a 
-              href="https://bit.ly/quizlinharun" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto"
+            <Button
+              asChild
+              className="neon-border bg-background/50 hover:bg-neon-blue/20 text-white px-4 sm:px-6 py-2 sm:py-4 text-sm sm:text-base font-medium transition-all duration-300 hover:scale-105 animate-glow w-full sm:w-auto relative z-20"
             >
-              <Button
-                className="neon-border bg-background/50 hover:bg-neon-blue text-white px-4 sm:px-8 py-4 sm:py-6 text-sm sm:text-lg font-medium transition-all duration-300 hover:scale-105 animate-glow w-full sm:w-auto"
+              <a 
+                href="https://bit.ly/quizlinharun" 
+                target="_blank" 
+                rel="noopener noreferrer"
               >
                 CONHECER O PRÉ-LANÇAMENTO DA LINHA RUN
-              </Button>
-            </a>
+              </a>
+            </Button>
           </motion.div>
         </motion.div>
       </Card>
