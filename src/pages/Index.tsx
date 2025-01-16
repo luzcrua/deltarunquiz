@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import QuizCard from "@/components/QuizCard";
 import QuizHeader from "@/components/quiz/QuizHeader";
