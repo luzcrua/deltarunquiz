@@ -73,8 +73,11 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
                 href="https://bit.ly/quizbotao589" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                className="text-center px-1 sm:px-4"
               >
-                QUERO ACESSO EXCLUSIVO À LINHA RUN + EBOOK GRATUITO
+                <span className="block text-[0.7rem] sm:text-base whitespace-normal sm:whitespace-nowrap">
+                  QUERO ACESSO EXCLUSIVO À LINHA RUN + EBOOK GRATUITO
+                </span>
               </a>
             </Button>
           </motion.div>
