@@ -110,11 +110,11 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
               >
                 <Camera className="w-5 h-5 text-neon-blue" />
                 <p className="text-white/90">
-                  Tire o print do seu PERFIL DE CORREDOR
+                  Tire o print do seu resultado PERFIL DE CORREDOR
                 </p>
               </motion.div>
 
-              {/* Share Instruction */}
+              {/* Post to Stories Instruction */}
               <motion.div 
                 className="flex items-center gap-3"
                 whileHover={{ x: 5 }}
@@ -122,7 +122,19 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
               >
                 <Share2 className="w-5 h-5 text-neon-blue" />
                 <p className="text-white/90">
-                  Compartilhe este quiz com 3 amigos(a) de corrida
+                  Pegue o print e poste nos stories marcando @deltafitnessbrazil
+                </p>
+              </motion.div>
+
+              {/* Share with Friends Instruction */}
+              <motion.div 
+                className="flex items-center gap-3"
+                whileHover={{ x: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Share2 className="w-5 h-5 text-neon-blue" />
+                <p className="text-white/90">
+                  Compartilhe este quiz com 3 amigos(a) de corrida, clique no botão abaixo
                 </p>
               </motion.div>
 
@@ -137,7 +149,7 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
                 </Button>
               </motion.div>
 
-              {/* Send Print Instruction */}
+              {/* Send Screenshots Instruction */}
               <motion.div 
                 className="flex items-center gap-3"
                 whileHover={{ x: 5 }}
@@ -145,7 +157,7 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
               >
                 <Send className="w-5 h-5 text-neon-blue" />
                 <p className="text-white/90">
-                  Manda o print do seu perfil de corredor
+                  Mande os prints pra gente mostrando que fez as tarefas clicando no botão abaixo
                 </p>
               </motion.div>
 
@@ -157,7 +169,7 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
               >
                 <Award className="w-5 h-5 text-neon-purple" />
                 <p className="text-white/90">
-                  Ganhe <span className="font-bold text-neon-purple">10% de desconto</span> antes de todo mundo para o pré-lançamento
+                  Ganhe <span className="font-bold text-neon-purple">10% de desconto</span> antes de todo mundo para o pré-lançamento mais um ebook gratuito
                 </p>
               </motion.div>
             </div>
