@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { lazy, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import QuizCard from "@/components/QuizCard";
-import ResultCard from "@/components/ResultCard";
 import QuizHeader from "@/components/quiz/QuizHeader";
 import QuizTitle from "@/components/quiz/QuizTitle";
 import QuizProgress from "@/components/quiz/QuizProgress";
@@ -10,6 +9,9 @@ import useSound from "use-sound";
 import { Share2, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+
+// Lazy load the ResultCard component since it's only needed after quiz completion
+const ResultCard = lazy(() => import("@/components/ResultCard"));
 
 const Index = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -143,12 +145,18 @@ const Index = () => {
               className="animate-float"
             />
           ) : (
-            <ResultCard
-              key="result"
-              type={determineRunnerType()[0]}
-              description={determineRunnerType()[1]}
-              className="animate-float"
-            />
+            <Suspense fallback={
+              <div className="animate-pulse flex justify-center items-center h-64">
+                <div className="w-12 h-12 border-4 border-neon-blue rounded-full border-t-transparent animate-spin" />
+              </div>
+            }>
+              <ResultCard
+                key="result"
+                type={determineRunnerType()[0]}
+                description={determineRunnerType()[1]}
+                className="animate-float"
+              />
+            </Suspense>
           )}
         </AnimatePresence>
 
