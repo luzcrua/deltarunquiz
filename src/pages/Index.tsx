@@ -11,6 +11,7 @@ import useSound from "use-sound";
 const Index = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<string[]>([]);
+  const [showResult, setShowResult] = useState(false);
   const [playClick] = useSound("/click.mp3");
   const [playSuccess] = useSound("/success.mp3");
 
@@ -25,6 +26,7 @@ const Index = () => {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       playSuccess();
+      setShowResult(true);
     }
   };
 
@@ -111,11 +113,11 @@ const Index = () => {
         >
           <QuizHeader />
           <QuizTitle />
-          <QuizProgress progress={progress} />
+          {!showResult && <QuizProgress progress={progress} />}
         </motion.div>
 
         <AnimatePresence mode="wait">
-          {currentQuestion < questions.length ? (
+          {!showResult ? (
             <QuizCard
               key={currentQuestion}
               question={questions[currentQuestion].question}
