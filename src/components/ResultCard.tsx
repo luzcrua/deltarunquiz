@@ -56,12 +56,18 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
             transition={{ duration: 0.4, delay: 0.7 }}
             className="flex justify-center mt-8"
           >
-            <Button
-              onClick={() => window.location.href = "https://bit.ly/quizlinharun"}
-              className="neon-border bg-background/50 hover:bg-background/80 text-white px-8 py-6 text-lg font-medium transition-all duration-300 hover:scale-105 animate-glow"
+            <a 
+              href="https://bit.ly/quizlinharun" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto"
             >
-              CONHECER O PRÉ-LANÇAMENTO DA LINHA RUN
-            </Button>
+              <Button
+                className="neon-border bg-background/50 hover:bg-neon-blue text-white px-8 py-6 text-lg font-medium transition-all duration-300 hover:scale-105 animate-glow w-full sm:w-auto"
+              >
+                CONHECER O PRÉ-LANÇAMENTO DA LINHA RUN
+              </Button>
+            </a>
           </motion.div>
         </motion.div>
       </Card>
