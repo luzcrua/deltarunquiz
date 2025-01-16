@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
-import { Crown, BookOpen, Megaphone } from "lucide-react";
+import { Crown, BookOpen, Megaphone, Share2, Instagram } from "lucide-react";
 import { ResultHeader } from "./quiz/ResultHeader";
 import { ShareInstructions } from "./quiz/ShareInstructions";
 
@@ -67,7 +67,7 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
           >
             <Button
               asChild
-              className="neon-border bg-background/50 hover:bg-neon-blue/20 text-white px-3 sm:px-6 py-2 sm:py-4 text-[0.7rem] sm:text-base font-medium transition-all duration-300 hover:scale-105 animate-glow w-full sm:w-auto relative z-20"
+              className="neon-border bg-background/50 hover:bg-neon-blue/20 text-white px-2 sm:px-6 py-2 sm:py-4 text-[0.65rem] sm:text-base font-medium transition-all duration-300 hover:scale-105 animate-glow w-full sm:w-auto relative z-20"
             >
               <a 
                 href="https://bit.ly/quizbotao589" 
@@ -78,6 +78,41 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
               </a>
             </Button>
           </motion.div>
+
+          {/* Footer */}
+          <div className="mt-8 pt-4 border-t border-white/10">
+            <div className="flex justify-center items-center gap-4">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-white/80 hover:text-white"
+                onClick={() => {
+                  const shareUrl = encodeURIComponent(window.location.href);
+                  const shareText = encodeURIComponent("Descubra seu perfil de corredor! Faça o quiz:");
+                  window.open(`https://wa.me/?text=${shareText}%20${shareUrl}`, '_blank');
+                }}
+              >
+                <Share2 className="w-5 h-5" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-white/80 hover:text-white"
+                asChild
+              >
+                <a
+                  href="https://www.instagram.com/deltafitnessbrazil/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+              </Button>
+            </div>
+            <p className="text-xs text-white/60 mt-2">
+              © 2024 Delta Fitness Brazil. Todos os direitos reservados.
+            </p>
+          </div>
         </motion.div>
       </Card>
     </motion.div>
