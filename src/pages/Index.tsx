@@ -102,45 +102,78 @@ const Index = () => {
         backgroundRepeat: "no-repeat"
       }}
     >
-      {/* Overlay for better contrast */}
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+      {/* Enhanced overlay with subtle gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/80 backdrop-blur-sm" />
       
       <div className="relative z-10 w-full max-w-4xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-12"
         >
-          {/* Logo and Main Title */}
-          <div className="mb-8">
+          {/* Logo and Main Title Section */}
+          <motion.div 
+            className="mb-8"
+            initial={{ scale: 0.95 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <img 
               src="/lovable-uploads/e2a65604-b3dd-4d81-b906-1191aae09373.png" 
               alt="Delta Fitness Brazil" 
               className="w-40 h-auto mx-auto mb-4 object-contain"
             />
-            <h1 className="font-serif text-5xl font-bold gradient-text tracking-tight mb-2">
+            <motion.h1 
+              className="font-serif text-5xl font-bold gradient-text tracking-tight mb-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               DELTA FITNESS BRAZIL
-            </h1>
-            <p className="text-3xl font-sans text-neon-blue animate-glow">
-              LINHA RUN
-            </p>
-            <p className="text-xl font-serif text-neon-purple mt-1">
-              (PRÉ-LANÇAMENTO)
-            </p>
-          </div>
+            </motion.h1>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="space-y-2"
+            >
+              <p className="text-3xl font-sans text-neon-blue animate-glow font-medium tracking-wide">
+                LINHA RUN
+              </p>
+              <p className="text-xl font-serif text-neon-purple mt-1 italic">
+                (PRÉ-LANÇAMENTO)
+              </p>
+            </motion.div>
+          </motion.div>
           
-          <div className="glass-card p-6 mb-8 mx-auto max-w-2xl">
-            <h2 className="text-3xl font-bold gradient-text animate-glow font-sans">
-              QUAL TIPO DE CORREDOR(A) VOCÊ É?
-            </h2>
-          </div>
+          {/* Enhanced Quiz Title Card */}
+          <motion.div 
+            className="glass-card p-6 mb-8 mx-auto max-w-2xl transform hover:scale-105 transition-transform duration-300"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+            <div className="relative overflow-hidden rounded-lg">
+              <div className="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10 animate-pulse" />
+              <h2 className="text-3xl font-bold gradient-text animate-glow font-sans relative z-10 py-2">
+                QUAL TIPO DE CORREDOR(A) VOCÊ É?
+              </h2>
+            </div>
+          </motion.div>
 
-          <div className="w-full max-w-md mx-auto">
-            <Progress value={progress} className="h-2 mb-2" />
-            <p className="text-sm text-white/60">
+          {/* Enhanced Progress Bar */}
+          <motion.div 
+            className="w-full max-w-md mx-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1 }}
+          >
+            <Progress value={progress} className="h-2 mb-2 bg-white/10" />
+            <p className="text-sm text-white/60 font-sans tracking-wider">
               Progresso: {Math.round(progress)}%
             </p>
-          </div>
+          </motion.div>
         </motion.div>
 
         <AnimatePresence mode="wait">
