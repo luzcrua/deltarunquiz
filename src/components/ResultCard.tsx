@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
-import { Megaphone } from "lucide-react";
+import { Crown, BookOpen, Megaphone } from "lucide-react";
 import { ResultHeader } from "./quiz/ResultHeader";
 import { ShareInstructions } from "./quiz/ShareInstructions";
 
@@ -43,8 +43,12 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
             {/* Pre-launch Title */}
             <div className="flex items-center gap-3 mb-6">
               <Megaphone className="w-6 h-6 text-neon-purple animate-pulse" />
-              <h3 className="text-xl sm:text-2xl font-bold gradient-text">
-                QUER TER ACESSO EXCUSIVO AO PRÉ-LANÇAMENTO DA LINHA RUN e GANHAR UM EBOOK GRATUITO?
+              <h3 className="text-xl sm:text-2xl font-bold gradient-text flex items-center gap-2">
+                QUER TER ACESSO EXCUSIVO AO PRÉ-LANÇAMENTO DA LINHA RUN 
+                <Crown className="w-6 h-6 text-yellow-400 animate-pulse" />
+                e GANHAR UM EBOOK GRATUITO
+                <BookOpen className="w-6 h-6 text-neon-blue animate-pulse" />
+                ?
               </h3>
             </div>
 
