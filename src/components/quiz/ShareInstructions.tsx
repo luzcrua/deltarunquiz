@@ -11,7 +11,6 @@ export const ShareInstructions = () => {
     const shareUrl = encodeURIComponent("https://bit.ly/deltafitness-linharun-quiz");
     window.open(`https://wa.me/?text=${shareMessage}${shareUrl}`, '_blank');
     
-    // Return to the quiz page
     setTimeout(() => {
       window.focus();
     }, 500);
@@ -36,7 +35,7 @@ export const ShareInstructions = () => {
       >
         <Camera className="w-5 h-5 text-neon-blue" />
         <p className="text-white/90">
-          Tire o print do seu resultado <span className="text-neon-blue font-bold">PERFIL DE CORREDOR</span> e poste nos stories marcando @deltafitnessbrazil
+          Tire o print do seu resultado <span className="text-neon-blue font-bold">PERFIL DE CORREDOR</span> e poste nos stories marcando <span className="text-[#9b87f5] font-bold">@deltafitnessbrazil</span>
         </p>
       </motion.div>
 
@@ -85,7 +84,7 @@ export const ShareInstructions = () => {
       >
         <Award className="w-5 h-5 text-neon-purple" />
         <p className="text-white/90">
-          Ganhe um Ebook Gratuito de <span className="text-neon-purple font-bold">"Plano de Treino de Corrida para Melhorar o Desempenho [em 4 Semanas]"</span>
+          <span className="text-[#F97316] font-bold text-lg">BÔNUS:</span> Ganhe um Ebook Gratuito de Plano de Treino de Corrida para Melhorar o Desempenho [em 4 Semanas]
         </p>
       </motion.div>
     </div>
