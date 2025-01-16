@@ -7,6 +7,9 @@ import QuizTitle from "@/components/quiz/QuizTitle";
 import QuizProgress from "@/components/quiz/QuizProgress";
 import { questions, runnerTypes } from "@/data/quizData";
 import useSound from "use-sound";
+import { Share2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 const Index = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -16,6 +19,21 @@ const Index = () => {
   const [playSuccess] = useSound("/success.mp3");
 
   const progress = (currentQuestion / questions.length) * 100;
+
+  const handleWhatsAppShare = () => {
+    const shareMessage = encodeURIComponent(
+      "🏃‍♂️ Ei! Vamos descobrir nosso perfil de corredor juntos? Faz o quiz comigo:\n\n"
+    );
+    const shareUrl = encodeURIComponent(window.location.href);
+    window.open(`https://wa.me/?text=${shareMessage}${shareUrl}`, '_blank');
+    
+    // Return to the quiz page
+    setTimeout(() => {
+      window.focus();
+    }, 500);
+
+    toast.success("Link compartilhado! Convide mais amigos para descobrirem seus perfis juntos! 🎉");
+  };
 
   const handleAnswer = (answer: string) => {
     playClick();
@@ -109,9 +127,25 @@ const Index = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center mb-12"
+          className="text-center"
         >
           <QuizHeader />
+          
+          {/* WhatsApp Share Button */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="mb-8"
+          >
+            <Button
+              onClick={handleWhatsAppShare}
+              className="glass-card group hover:scale-105 transition-all duration-300 bg-[#25D366] hover:bg-[#128C7E] text-white font-medium px-6 py-3 rounded-full flex items-center gap-2 mx-auto animate-float"
+            >
+              <Share2 className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+              <span>Chamar amigos para fazer o quiz juntos!</span>
+            </Button>
+          </motion.div>
+
           <QuizTitle />
           {!showResult && <QuizProgress progress={progress} />}
         </motion.div>
