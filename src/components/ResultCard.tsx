@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
-import { Camera, Send, Share2, Award, Megaphone } from "lucide-react";
+import { Camera, Send, Share2, Award, Megaphone, Instagram } from "lucide-react";
 import { toast } from "sonner";
 
 interface ResultCardProps {
@@ -25,6 +25,19 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
     }, 500);
 
     toast.success("Link compartilhado! Convide mais amigos para descobrirem seus perfis juntos! 🎉");
+  };
+
+  const handleInstagramShare = () => {
+    // Create text for Instagram story
+    const text = `Descobri meu perfil de corredor: ${type}\n\nFaça o quiz você também!\n@deltafitnessbrazil`;
+    
+    // Create a URL with the text
+    const shareUrl = `https://www.instagram.com/create/story?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.href)}`;
+    
+    // Open Instagram
+    window.open(shareUrl, '_blank');
+    
+    toast.success("Compartilhe seu resultado nos stories do Instagram! 📸");
   };
 
   return (
@@ -140,6 +153,17 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
                 <p className="text-white/90">
                   Ganhe <span className="font-bold text-neon-purple">10% de desconto</span> antes de todo mundo para o pré-lançamento
                 </p>
+              </motion.div>
+
+              {/* Instagram Share Button */}
+              <motion.div className="mt-6">
+                <Button
+                  onClick={handleInstagramShare}
+                  className="glass-card group hover:scale-105 transition-all duration-300 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] hover:from-[#833AB4]/90 hover:via-[#FD1D1D]/90 hover:to-[#F77737]/90 text-white font-medium px-6 py-3 rounded-full flex items-center gap-2 w-full justify-center"
+                >
+                  <Instagram className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                  <span>POSTAR NOS STORIES MARCANDO @deltafitnessbrazil</span>
+                </Button>
               </motion.div>
             </div>
           </motion.div>
