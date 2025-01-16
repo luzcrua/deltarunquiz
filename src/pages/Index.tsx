@@ -116,7 +116,7 @@ const Index = () => {
             <img 
               src="/lovable-uploads/e2a65604-b3dd-4d81-b906-1191aae09373.png" 
               alt="Delta Fitness Brazil" 
-              className="w-32 h-32 mx-auto mb-4"
+              className="w-40 h-auto mx-auto mb-4 object-contain"
             />
             <h1 className="font-serif text-5xl font-bold gradient-text tracking-tight mb-2">
               DELTA FITNESS BRAZIL
