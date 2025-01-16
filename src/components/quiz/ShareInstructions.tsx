@@ -61,7 +61,7 @@ export const ShareInstructions = () => {
       >
         <Share2 className="w-5 h-5 text-neon-blue" />
         <p className="text-white/90">
-          Compartilhe este quiz com 3 amigos(a) de corrida, clique no botão abaixo
+          Compartilhe este quiz com 3 amigos(a) de corrida, clique no botão COMPARTILHAR NO WHATSAPP
         </p>
       </motion.div>
 
