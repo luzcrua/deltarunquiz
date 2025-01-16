@@ -17,7 +17,7 @@ const QuizHeader = () => {
         <h2 className="text-base sm:text-lg text-white/80 font-medium">
           DELTA FITNESS BRAZIL
         </h2>
-        <h1 className="text-base sm:text-lg text-white/80 font-medium">
+        <h1 className="text-base sm:text-lg font-medium gradient-text">
           QUIZ LINHA RUN
         </h1>
       </div>
