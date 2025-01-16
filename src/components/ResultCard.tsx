@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
+import { Camera, Send, Megaphone, Award } from "lucide-react";
 
 interface ResultCardProps {
   type: string;
@@ -47,6 +48,61 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
             <p className="text-sm sm:text-base md:text-lg leading-relaxed text-white/90">
               {description}
             </p>
+          </motion.div>
+
+          {/* Instructions Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.6 }}
+            className="mb-8"
+          >
+            {/* Pre-launch Title */}
+            <div className="flex items-center gap-3 mb-6">
+              <Megaphone className="w-6 h-6 text-neon-purple animate-pulse" />
+              <h3 className="text-xl sm:text-2xl font-bold gradient-text">
+                QUER CONHECER O PRÉ-LANÇAMENTO DA LINHA RUN?
+              </h3>
+            </div>
+
+            {/* Instructions Card */}
+            <div className="glass-card p-4 sm:p-6 rounded-lg space-y-4">
+              {/* Screenshot Instruction */}
+              <motion.div 
+                className="flex items-center gap-3"
+                whileHover={{ x: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Camera className="w-5 h-5 text-neon-blue" />
+                <p className="text-white/90">
+                  Tire o print do seu PERFIL DE CORREDOR
+                </p>
+              </motion.div>
+
+              {/* Send Instruction */}
+              <motion.div 
+                className="flex items-center gap-3"
+                whileHover={{ x: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Send className="w-5 h-5 text-neon-blue" />
+                <p className="text-white/90">
+                  Clique no botão logo abaixo e envie seu print
+                </p>
+              </motion.div>
+
+              {/* Discount Info */}
+              <motion.div 
+                className="flex items-center gap-3"
+                whileHover={{ x: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Award className="w-5 h-5 text-neon-purple" />
+                <p className="text-white/90">
+                  Ganhe <span className="font-bold text-neon-purple">10% de desconto</span> antes de todo mundo para o pré-lançamento
+                </p>
+              </motion.div>
+            </div>
           </motion.div>
 
           {/* Action Button */}
