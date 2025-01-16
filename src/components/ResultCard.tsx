@@ -41,15 +41,17 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
             className="mb-8"
           >
             {/* Pre-launch Title */}
-            <div className="flex items-center gap-3 mb-6">
-              <Megaphone className="w-6 h-6 text-neon-purple animate-pulse" />
-              <h3 className="text-xl sm:text-2xl font-bold gradient-text flex items-center gap-2">
-                QUER TER ACESSO EXCUSIVO AO PRÉ-LANÇAMENTO DA LINHA RUN 
-                <Crown className="w-6 h-6 text-yellow-400 animate-pulse" />
-                e GANHAR UM EBOOK GRATUITO
-                <BookOpen className="w-6 h-6 text-neon-blue animate-pulse" />
-                ?
-              </h3>
+            <div className="flex flex-col items-center gap-3 mb-6">
+              <div className="flex items-center gap-2">
+                <Megaphone className="w-6 h-6 text-neon-purple animate-pulse" />
+                <h3 className="text-xl sm:text-2xl font-bold gradient-text">
+                  QUER TER ACESSO EXCUSIVO AO PRÉ-LANÇAMENTO DA LINHA RUN E GANHAR UM EBOOK GRATUITO?
+                </h3>
+              </div>
+              <div className="flex items-center gap-6 mt-3">
+                <Crown className="w-10 h-10 text-yellow-400 animate-pulse" />
+                <BookOpen className="w-10 h-10 text-neon-blue animate-pulse" />
+              </div>
             </div>
 
             {/* Instructions Card */}
