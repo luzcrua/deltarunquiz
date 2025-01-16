@@ -58,7 +58,7 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
           >
             <Button
               asChild
-              className="neon-border bg-background/50 hover:bg-neon-blue/20 text-white px-4 sm:px-6 py-2 sm:py-4 text-sm sm:text-base font-medium transition-all duration-300 hover:scale-105 animate-glow w-full sm:w-auto relative z-20"
+              className="neon-border bg-background/50 hover:bg-neon-blue/20 text-white px-3 sm:px-6 py-2 sm:py-4 text-[0.7rem] sm:text-base font-medium transition-all duration-300 hover:scale-105 animate-glow w-full sm:w-auto relative z-20"
             >
               <a 
                 href="https://bit.ly/quizlinharun" 
