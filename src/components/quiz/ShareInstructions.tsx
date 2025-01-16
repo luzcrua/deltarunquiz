@@ -35,7 +35,7 @@ export const ShareInstructions = () => {
       >
         <Camera className="w-5 h-5 text-neon-blue" />
         <p className="text-white/90">
-          Tire o print do seu resultado <span className="text-neon-blue font-bold">PERFIL DE CORREDOR</span> e poste nos stories marcando <span className="text-[#9b87f5] font-bold">@deltafitnessbrazil</span>
+          Tire o print do seu resultado <span className="text-neon-blue font-bold">PERFIL DE CORREDOR</span> e poste nos stories marcando <span className="text-[#D946EF] font-bold">@deltafitnessbrazil</span>
         </p>
       </motion.div>
 
@@ -48,7 +48,7 @@ export const ShareInstructions = () => {
       >
         <Share2 className="w-5 h-5 text-neon-blue" />
         <p className="text-white/90">
-          Compartilhe este quiz com 3 amigos(a) de corrida, clique no botão <span className="text-green-500 font-bold">COMPARTILHAR NO WHATSAPP</span>
+          Compartilhe este quiz com <span className="text-[#F2FCE2] font-bold">3 amigos(a) de corrida</span>, clique no botão <span className="text-green-500 font-bold">COMPARTILHAR NO WHATSAPP</span>
         </p>
       </motion.div>
 
@@ -84,7 +84,7 @@ export const ShareInstructions = () => {
       >
         <Award className="w-5 h-5 text-neon-purple" />
         <p className="text-white/90">
-          <span className="text-[#F97316] font-bold text-lg">BÔNUS:</span> Ganhe um Ebook Gratuito de Plano de Treino de Corrida para Melhorar o Desempenho [em 4 Semanas]
+          <span className="text-[#F97316] font-bold text-lg">BÔNUS:</span> Ganhe um Ebook Gratuito de <span className="text-[#8B5CF6] font-bold">Plano de Treino de Corrida para Melhorar o Desempenho [em 4 Semanas]</span>
         </p>
       </motion.div>
     </div>
