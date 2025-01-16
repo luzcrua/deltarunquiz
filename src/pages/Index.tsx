@@ -111,13 +111,26 @@ const Index = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h1 className="font-serif text-5xl font-bold mb-6 gradient-text tracking-tight">
-            LINHA RUN
-            <span className="block text-3xl mt-2">(PRÉ-LANÇAMENTO)</span>
-          </h1>
+          {/* Logo and Main Title */}
+          <div className="mb-8">
+            <img 
+              src="/lovable-uploads/e2a65604-b3dd-4d81-b906-1191aae09373.png" 
+              alt="Delta Fitness Brazil" 
+              className="w-32 h-32 mx-auto mb-4"
+            />
+            <h1 className="font-serif text-5xl font-bold gradient-text tracking-tight mb-2">
+              DELTA FITNESS BRAZIL
+            </h1>
+            <p className="text-3xl font-sans text-neon-blue animate-glow">
+              LINHA RUN
+            </p>
+            <p className="text-xl font-serif text-neon-purple mt-1">
+              (PRÉ-LANÇAMENTO)
+            </p>
+          </div>
           
           <div className="glass-card p-6 mb-8 mx-auto max-w-2xl">
-            <h2 className="text-3xl font-bold gradient-text animate-glow">
+            <h2 className="text-3xl font-bold gradient-text animate-glow font-sans">
               QUAL TIPO DE CORREDOR(A) VOCÊ É?
             </h2>
           </div>
