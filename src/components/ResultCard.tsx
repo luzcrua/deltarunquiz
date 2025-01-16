@@ -44,7 +44,7 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
             <div className="flex items-center gap-3 mb-6">
               <Megaphone className="w-6 h-6 text-neon-purple animate-pulse" />
               <h3 className="text-xl sm:text-2xl font-bold gradient-text">
-                QUER CONHECER O PRÉ-LANÇAMENTO DA LINHA RUN?
+                QUER TER ACESSO EXCUSIVO AO PRÉ-LANÇAMENTO DA LINHA RUN e GANHAR UM EBOOK GRATUITO?
               </h3>
             </div>
 
