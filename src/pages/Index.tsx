@@ -187,7 +187,15 @@ const Index = () => {
             </Button>
           </div>
           <p className="text-xs text-white/60">
-            © 2024 Delta Fitness Brazil. Todos os direitos reservados.
+            Desenvolvido por{" "}
+            <a
+              href="https://www.instagram.com/arinelson.me/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neon-blue hover:text-neon-purple transition-colors"
+            >
+              Arinelson Santos
+            </a>
           </p>
         </div>
       </div>
