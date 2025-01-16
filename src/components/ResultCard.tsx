@@ -49,25 +49,18 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
             </p>
           </motion.div>
 
-          {/* Action Buttons */}
+          {/* Action Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.7 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mt-8"
+            className="flex justify-center mt-8"
           >
             <Button
-              onClick={() => window.location.reload()}
-              className="neon-border bg-background/50 hover:bg-background/80 text-white px-8 py-6 text-lg font-medium transition-all duration-300 hover:scale-105"
+              onClick={() => window.location.href = "https://bit.ly/quizlinharun"}
+              className="neon-border bg-background/50 hover:bg-background/80 text-white px-8 py-6 text-lg font-medium transition-all duration-300 hover:scale-105 animate-glow"
             >
-              Tentar Novamente
-            </Button>
-            
-            <Button
-              onClick={() => window.location.href = "https://runprelaunch.com"}
-              className="neon-border bg-background/50 hover:bg-background/80 text-white px-8 py-6 text-lg font-medium transition-all duration-300 hover:scale-105"
-            >
-              Conhecer a Run Pre-Launch
+              CONHECER O PRÉ-LANÇAMENTO DA LINHA RUN
             </Button>
           </motion.div>
         </motion.div>
