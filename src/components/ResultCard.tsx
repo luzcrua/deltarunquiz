@@ -66,6 +66,25 @@ const ResultCard = ({ type, description, className }: ResultCardProps) => {
             </p>
           </motion.div>
 
+          {/* Instagram Share Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.6 }}
+            className="mb-8 glass-card p-4 sm:p-6 rounded-lg"
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <Camera className="w-6 h-6 text-pink-500 animate-pulse" />
+              <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-orange-500 bg-clip-text text-transparent">
+                COMPARTILHE SEU RESULTADO!
+              </h3>
+            </div>
+            <p className="text-white/90 pl-9">
+              Tire um print do seu resultado e compartilhe nos stories marcando{" "}
+              <span className="font-bold text-pink-500">@deltafitnessbrazil</span>
+            </p>
+          </motion.div>
+
           {/* Instructions Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
