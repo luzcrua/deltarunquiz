@@ -7,7 +7,7 @@ import QuizTitle from "@/components/quiz/QuizTitle";
 import QuizProgress from "@/components/quiz/QuizProgress";
 import { questions, runnerTypes } from "@/data/quizData";
 import useSound from "use-sound";
-import { Share2 } from "lucide-react";
+import { Share2, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 
@@ -27,7 +27,6 @@ const Index = () => {
     const shareUrl = encodeURIComponent(window.location.href);
     window.open(`https://wa.me/?text=${shareMessage}${shareUrl}`, '_blank');
     
-    // Return to the quiz page
     setTimeout(() => {
       window.focus();
     }, 500);
@@ -152,6 +151,37 @@ const Index = () => {
             />
           )}
         </AnimatePresence>
+
+        {/* Footer */}
+        <div className="mt-8 text-center border-t border-white/10 pt-4">
+          <div className="flex justify-center items-center gap-4 mb-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-white/80 hover:text-white"
+              onClick={handleWhatsAppShare}
+            >
+              <Share2 className="w-5 h-5" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-white/80 hover:text-white"
+              asChild
+            >
+              <a
+                href="https://www.instagram.com/deltafitnessbrazil/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+            </Button>
+          </div>
+          <p className="text-xs text-white/60">
+            © 2024 Delta Fitness Brazil. Todos os direitos reservados.
+          </p>
+        </div>
       </div>
     </div>
   );
