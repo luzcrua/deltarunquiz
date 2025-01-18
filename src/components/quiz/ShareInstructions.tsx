@@ -8,7 +8,7 @@ export const ShareInstructions = () => {
     const shareMessage = encodeURIComponent(
       "🏃‍♂️ Ei! Vamos descobrir nosso perfil de corredor juntos? Faz o quiz comigo:\n\n"
     );
-    const shareUrl = encodeURIComponent("https://bit.ly/deltafitness-linharun-quiz");
+    const shareUrl = encodeURIComponent("https://deltarunquiz.netlify.app/");
     window.open(`https://wa.me/?text=${shareMessage}${shareUrl}`, '_blank');
     
     setTimeout(() => {
